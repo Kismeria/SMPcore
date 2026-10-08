@@ -82,7 +82,7 @@ for %%R in ("%USERPROFILE%\.jdks" "%ProgramFiles%\Java" "%ProgramFiles%\Eclipse 
 )
 if defined JDK goto :use_jdk
 if defined JAVA_HOME goto :have_java_home
-echo [!] JDK 25 не нашёл. Если сборка упадёт — впиши путь к JDK 25 в строку set "JDK=" вверху файла
+echo [i] JDK 25 в обычных папках не нашёл — Gradle поищет его сам. Если сборка упадёт с ошибкой про Java, впиши путь к JDK 25 в set "JDK=" вверху файла
 exit /b 0
 
 :have_java_home
