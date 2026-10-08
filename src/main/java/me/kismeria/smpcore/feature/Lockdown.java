@@ -14,44 +14,25 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
-import org.bukkit.util.CachedServerIcon;
 
-import java.io.File;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
 /**
  * /lockdown — техработы: зайти могут только операторы, остальных кикает. В списке серверов
- * вместо онлайна — «Техработы», своё описание и своя иконка (plugins/SmpCore/lockdown-icon.png, 64x64).
+ * вместо онлайна — «Техработы» и своё описание. Иконки техработ — plugins/SmpCore/icons/lockdown/ (см. MotdManager).
  */
 public final class Lockdown implements TabExecutor, Listener {
 
-    private static final String ICON = "lockdown-icon.png";
-
     private final SmpCore plugin;
-    private CachedServerIcon icon;
 
     public Lockdown(SmpCore plugin) {
         this.plugin = plugin;
-        loadIcon();
     }
 
     public boolean active() {
         return plugin.flag("lockdown.enabled");
-    }
-
-    private void loadIcon() {
-        icon = null;
-        File file = new File(plugin.getDataFolder(), ICON);
-        if (!file.exists()) {
-            plugin.saveResource(ICON, false);
-        }
-        try {
-            icon = Bukkit.loadServerIcon(file);
-        } catch (Exception e) {
-            plugin.getLogger().warning("Иконка техработ " + ICON + " не подошла (нужен PNG 64x64): " + e.getMessage());
-        }
     }
 
     @Override
@@ -66,8 +47,8 @@ public final class Lockdown implements TabExecutor, Listener {
             return true;
         }
         plugin.set("lockdown.enabled", enable);
+        plugin.motd().loadIcons();
         if (enable) {
-            loadIcon();
             for (Player player : List.copyOf(Bukkit.getOnlinePlayers())) {
                 if (!player.isOp()) {
                     player.kick(plugin.lang().get(player, "lockdown.kick"));
@@ -112,9 +93,6 @@ public final class Lockdown implements TabExecutor, Listener {
         event.setVersion(Text.legacy(plugin.getConfig().getString("lockdown.version-text", "<red>Техработы")));
         event.setProtocolVersion(-1);
         event.getListedPlayers().clear();
-        if (icon != null) {
-            event.setServerIcon(icon);
-        }
     }
 
     @Override

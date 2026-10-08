@@ -138,7 +138,7 @@ lockdown:
   motd: "<gold><bold>Технические работы</bold></gold><newline><gray>Скоро вернёмся!"
   # Текст вместо онлайна
   version-text: "<red>Техработы"
-  # Иконка — plugins/SmpCore/lockdown-icon.png (PNG 64x64), можно заменить своей
+  # Иконки техработ — plugins/SmpCore/icons/lockdown/ (настройки — в icons.lockdown ниже)
 
 # Рубка деревьев целиком: срубил бревно топором — падает всё дерево. Работает у всех.
 # /treechop (админы) или кнопка в /smp — все эти настройки в меню
@@ -414,8 +414,23 @@ motd:
   hide-count: false
   # Текст вместо онлайна (сервер выглядит «другой версии», зайти можно). Пусто — выключено
   version-text: ""
-  # Случайная иконка из plugins/SmpCore/icons/*.png (64x64)
-  random-icon: false
+
+# Иконка сервера в списке серверов (работает и с выключенным motd).
+# Кидай любые картинки (PNG, JPG, GIF, BMP) — плагин сам обрежет до квадрата и ужмёт до 64x64.
+#   обычные   — plugins/SmpCore/icons/
+#   техработы — plugins/SmpCore/icons/lockdown/
+# Папка пустая — показывается обычный server-icon.png сервера. Применить — /smp reload
+icons:
+  enabled: true
+  # random — случайная на каждое обновление списка, cycle — по очереди раз в cycle-seconds,
+  # fixed — всегда одна: file (имя файла из папки, например "logo.png")
+  mode: random
+  cycle-seconds: 10
+  file: ""
+  lockdown:
+    mode: random
+    cycle-seconds: 10
+    file: ""
 
 vanish:
   # Админы с smpcore.vanish.see видят друг друга в ванише

@@ -253,6 +253,10 @@ public final class SmpCore extends JavaPlugin {
         return getConfig().getBoolean(path);
     }
 
+    public MotdManager motd() {
+        return motd;
+    }
+
     public ZoneId zone() {
         try {
             return ZoneId.of(getConfig().getString("timezone", "Europe/Moscow"));
