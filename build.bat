@@ -32,7 +32,7 @@ set "JDK="
 set "SMPCORE_REPO=https://github.com/Kismeria/SMPcore.git"
 set "SMPCORE_BRANCH=claude/gifted-clarke-ouqfu3"
 set "SMPORIGINS_REPO=https://github.com/Kismeria/SMPorigins.git"
-set "SMPORIGINS_BRANCH=main"
+set "SMPORIGINS_BRANCH=claude/gifted-clarke-ouqfu3"
 
 rem -------------------------------------------------------------
 
