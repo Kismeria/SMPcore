@@ -1,0 +1,187 @@
+name: SmpCore
+version: '${version}'
+main: me.kismeria.smpcore.SmpCore
+api-version: '26.3'
+author: Kismeria
+softdepend: [voicechat, floodgate, CoreProtect, InventoryRollbackPlus]
+description: Управление SMP-сервером — старт с анимацией границы, PvP-кулдауны, нёрфы, защита от абуза, миникарты.
+
+commands:
+  smp:
+    description: Панель управления SMP
+    usage: /smp [menu|start|cancel|lobby|reset|reload|info]
+    aliases: [smpcore, smpadmin]
+  smptranslate:
+    description: Перевести сообщение из чата (кнопка [⇄])
+    usage: /smptranslate <id>
+    permission: smpcore.translate
+  vanish:
+    description: Ваниш — стать невидимым для игроков
+    usage: /vanish [ник]
+    aliases: [v]
+    permission: smpcore.vanish
+  invsee:
+    description: Полный инвентарь игрока с бронёй и второй рукой
+    usage: /invsee [ник] [ender]
+    aliases: [inv]
+    permission: smpcore.invsee
+  bolt:
+    description: Ударить игрока молнией
+    usage: /bolt <ник>
+    permission: smpcore.fun
+  svo:
+    description: Пчела-дрон с крипером летит к игроку и взрывается
+    usage: /svo <ник>
+    permission: smpcore.fun
+  ban:
+    description: Забанить игрока
+    usage: /ban <ник> [время] [причина]
+    permission: smpcore.punish.ban
+  unban:
+    description: Разбанить игрока
+    usage: /unban <ник>
+    permission: smpcore.punish.ban
+  mute:
+    description: Замутить игрока (чат, личка, голосовой чат)
+    usage: /mute <ник> [время] [причина]
+    permission: smpcore.punish.mute
+  unmute:
+    description: Размутить игрока
+    usage: /unmute <ник>
+    permission: smpcore.punish.mute
+  kick:
+    description: Кикнуть игрока
+    usage: /kick <ник> [причина]
+    permission: smpcore.punish.kick
+  changepassword:
+    description: Сменить пароль для входа
+    usage: /changepassword
+    aliases: [changepass, cp]
+  resetpassword:
+    description: Сбросить пароль игрока (он зарегистрируется заново)
+    usage: /resetpassword <ник>
+    permission: smpcore.auth.admin
+  shatter:
+    description: Рассыпать ближайшую душу или задать ей время
+    usage: /shatter [время]
+    permission: smpcore.soul.admin
+  spawn:
+    description: Телепорт на спавн
+    usage: /spawn [ник]
+    permission: smpcore.spawn
+  nether:
+    description: Телепорт на спавн в аду
+    usage: /nether [ник]
+    permission: smpcore.spawn
+  back:
+    description: Вернуться на прошлое место или место смерти
+    usage: /back
+    permission: smpcore.back
+  sit:
+    description: Сесть (Shift — встать). /sit players — запретить садиться на себя
+    usage: /sit [players]
+    permission: smpcore.pose
+  lay:
+    description: Лечь (Shift — встать)
+    usage: /lay
+    permission: smpcore.pose
+  crawl:
+    description: Ползти (Shift — встать)
+    usage: /crawl
+    permission: smpcore.pose
+  return:
+    description: То же, что /back (перекрывает ванильную /return)
+    usage: /return
+    permission: smpcore.back
+  lockdown:
+    description: Техработы — зайти могут только операторы
+    usage: /lockdown [on|off]
+    permission: smpcore.lockdown
+  treechop:
+    description: Настройки рубки деревьев (админы)
+    usage: /treechop
+    permission: smpcore.treechop.admin
+  history:
+    description: История наказаний игрока
+    usage: /history <ник>
+    permission: smpcore.punish.history
+
+permissions:
+  smpcore.lockdown:
+    description: /lockdown
+    default: op
+  smpcore.treechop:
+    description: Рубка деревьев целиком
+    default: true
+  smpcore.treechop.admin:
+    description: /treechop — меню настроек рубки
+    default: op
+  smpcore.pose:
+    description: /sit, /lay, /crawl
+    default: true
+  smpcore.admin:
+    description: Доступ к панели и командам управления
+    default: op
+  smpcore.translate:
+    description: Кнопка перевода в чате
+    default: true
+  smpcore.seehidden:
+    description: Видеть невидимых игроков в табе (если staff-see-hidden включён)
+    default: op
+  smpcore.vanish:
+    description: /vanish
+    default: op
+  smpcore.vanish.others:
+    description: /vanish <ник>
+    default: op
+  smpcore.vanish.see:
+    description: Видеть игроков в ванише (если vanish.staff-see включён)
+    default: op
+  smpcore.fun:
+    description: /bolt и /svo
+    default: op
+  smpcore.invsee:
+    description: /invsee — смотреть и менять инвентарь игрока
+    default: op
+  smpcore.alerts:
+    description: Получать алерты о подозрительной добыче
+    default: op
+  smpcore.punish.ban:
+    description: /ban и /unban
+    default: op
+  smpcore.punish.mute:
+    description: /mute и /unmute (можно выдать хелперам)
+    default: op
+  smpcore.punish.kick:
+    description: /kick
+    default: op
+  smpcore.punish.history:
+    description: /history
+    default: op
+  smpcore.punish.exempt:
+    description: Иммунитет к бану, муту и кику
+    default: false
+  smpcore.soul.admin:
+    description: /shatter
+    default: op
+  smpcore.back:
+    description: /back
+    default: op
+  smpcore.spawn:
+    description: /spawn и /nether
+    default: op
+  smpcore.auth.admin:
+    description: /resetpassword
+    default: op
+  smpcore.mention.all:
+    description: Упоминать всех через @here
+    default: op
+  smpcore.mention.self:
+    description: Можно упомянуть себя (для проверки пингов)
+    default: op
+  smpcore.mention.bypass:
+    description: Не получать уведомления об упоминаниях
+    default: false
+  smpcore.bypass.lobby:
+    description: Игнорировать ограничения лобби до старта
+    default: op

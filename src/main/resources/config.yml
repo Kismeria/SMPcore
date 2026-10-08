@@ -1,0 +1,468 @@
+# ============================================================
+#  SmpCore — настройки. Почти всё меняется в игре: /smp
+#  Тексты всех уведомлений — в plugins/SmpCore/lang/<язык>.yml
+# ============================================================
+
+# Часовой пояс для ввода времени старта (18:30 и т.п.)
+timezone: "Europe/Moscow"
+
+# Язык, если для клиента игрока нет файла в lang/ (ru_ru, en_us, ...)
+default-language: "ru_ru"
+
+# Основной мир (пусто = первый мир сервера)
+main-world: ""
+
+start:
+  # Обратный отсчёт до старта внизу экрана (только цифры)
+  countdown: true
+  # Звук тиканья на последних 10 секундах
+  countdown-sound: true
+  # Тайтл и звук при старте — тексты в lang
+  fireworks: true
+  # Рассадка игроков по кругу перед стартом
+  spread:
+    enabled: false
+    # За сколько секунд до старта рассадить
+    seconds-before: 10
+    # Радиус круга (не больше половины лобби)
+    radius: 16
+    # Заморозить рассаженных до старта (смотреть по сторонам можно)
+    freeze: true
+
+border:
+  # Центр границы (если не задан — берётся спавн мира)
+  # center-x: 0.5
+  # center-z: 0.5
+  # Размер (сторона квадрата) в лобби до старта
+  lobby-size: 48
+  # Размер после расширения
+  final-size: 10000
+  # Длительность анимации расширения, секунды
+  expand-seconds: 60
+  # Синхронизировать границу ада (размер / 8, центр / 8)
+  sync-nether: true
+  # Плановое расширение после старта: +amount каждые every-hours часов
+  growth:
+    enabled: false
+    amount: 2000
+    every-hours: 168
+    max-size: 30000
+    # За сколько минут граница дорастает
+    expand-minutes: 10
+
+lobby:
+  # Ограничения действуют до старта. Обход: smpcore.bypass.lobby или креатив
+  no-pvp: true
+  no-build: true
+  no-damage: true
+  no-hunger: true
+  no-portals: true
+  teleport-on-join: true
+
+world:
+  nether-enabled: true
+  end-enabled: true
+  # Открыть через N минут после старта SMP (0 — сразу со стартом)
+  nether-open-after-minutes: 0
+  end-open-after-minutes: 0
+  # Мобы ломают блоки: криперы, гасты, иссушитель, эндермены, зомби (двери), чешуйницы, разорители.
+  # Через события, а не геймрул mobGriefing — жители всё так же собирают урожай, подбирают хлеб и размножаются
+  mob-griefing: true
+  # TNT и вагонетки с TNT ломают блоки (выкл — взрыв без разрушений)
+  tnt-block-damage: true
+
+fun:
+  # Шанс (%), что крипер вместо взрыва бахнет конфетти — урон только от звёздочки фейерверка
+  creeper-confetti-chance: 10
+
+# Фичи из Vanilla Refresh. Души (вещи и 70% опыта после смерти) работают всегда,
+# сервер сам держит keepInventory включённым.
+features:
+  # «День N» на экране в момент наступления нового дня (дни с 1, каждый 100-й — юбилей)
+  day-counter: true
+  # Опыт с убитых мобов летит к убийце
+  homing-xp: true
+  # Звук и частицы при крафте
+  craft-sounds: true
+  # Трезубец с верностью возвращается из бездны
+  loyal-tridents: true
+  # Звук смерти игрока зависит от причины
+  death-sounds: true
+  # Стойки ставятся с руками, Shift + ПКМ пустой рукой — сменить позу
+  armor-stands: true
+  # Тотем в руке спасает из бездны: левитация вверх, потом медленное падение
+  void-totem: true
+  # Флаг в руке + присесть 3 раза — надеть на голову
+  banner-hats: true
+  # Частицы при новом уровне и при прыжке в воду с высоты
+  player-animations: true
+  # Частицы у наковальни, стола зачарований, маяка, колокола, кровати и якоря
+  block-animations: true
+  # Шанс (%), что пиглин появится в золотой броне с отделкой
+  trimmed-piglins-chance: 15
+  # Сердцебиение, когда после удара хп не больше порога (в половинках сердца)
+  low-health-sound: true
+  low-health-threshold: 6
+  # Ускорение на тропинках (через атрибут скорости, без эффекта), %
+  path-sprint: true
+  path-sprint-bonus: 20
+  # Обычный компас в руке показывает место последней смерти
+  compass-death: true
+  # Фейерверк на торт — конфетти без урона
+  party-cake: true
+  # «X впервые на сервере! Игрок №N» (не в лобби и не в первые 30 минут после старта)
+  first-join-message: true
+
+# /sit, /lay, /crawl — для всех игроков. Встать — Shift
+poses:
+  # ПКМ пустой рукой по нижней ступеньке или полублоку — сесть
+  sit-on-stairs: true
+  # ПКМ пустой рукой по игроку — сесть ему на голову (/sit players — запретить садиться на себя)
+  sit-on-players: true
+
+# Сон: когда спит достаточно игроков, ночь не обрывается, а плавно проматывается
+sleep:
+  animation: true
+  # За сколько секунд пролетает ночь
+  duration-seconds: 6
+  # Пропущенное время не пропадает: печи, костры и варочные стойки доделывают своё,
+  # урожай и саженцы растут, детёныши взрослеют
+  simulate: true
+  # Потолок ускорения случайных тиков (рост растений). Больше — точнее, но тяжелее для сервера
+  max-random-tick-speed: 300
+
+# /lockdown — техработы: зайти могут только операторы
+lockdown:
+  enabled: false
+  # Описание в списке серверов (MiniMessage, вторая строка после <newline>)
+  motd: "<gold><bold>Технические работы</bold></gold><newline><gray>Скоро вернёмся!"
+  # Текст вместо онлайна
+  version-text: "<red>Техработы"
+  # Иконка — plugins/SmpCore/lockdown-icon.png (PNG 64x64), можно заменить своей
+
+# Рубка деревьев целиком: срубил бревно топором — падает всё дерево. Работает у всех.
+# /treechop (админы) или кнопка в /smp — все эти настройки в меню
+treechop:
+  enabled: true
+  # Когда работает: not-sneaking (присел — рубишь по одному бревну), sneaking (только присев), always
+  activation: not-sneaking
+  # fall — дерево падает от игрока и рассыпается в дроп; sequential — брёвна исчезают по одному снизу вверх;
+  # instant — всё сразу
+  animation: fall
+  # Длительность падения (тики) и задержка между брёвнами в sequential
+  fall-ticks: 24
+  sequential-delay-ticks: 2
+  # Лимиты на одно дерево
+  max-logs: 150
+  max-leaves: 400
+  max-radius: 10
+  # Рубить только настоящие деревья: рядом должна быть природная листва (постройки из брёвен не тронет)
+  require-leaves: true
+  min-leaves: 4
+  # Листва этого дерева сразу осыпается листочками (соседние деревья не трогает). Дроп — как с топора
+  break-leaves: true
+  # Весь дроп у пня, а не там, где упало дерево
+  drops-at-stump: false
+  # Множитель износа топора за каждое бревно (с учётом «Прочности»): 1 — как в ванилле, 0 — не тратить
+  durability-multiplier: 1.0
+  # Не рубить целиком, если топор сломается — срубится только одно бревно
+  protect-axe: true
+  # Посадить саженец на месте пня (у толстых деревьев — 4)
+  replant: true
+  # Саженец берётся из дропа дерева или из инвентаря; false — сажать бесплатно
+  replant-needs-sapling: true
+  in-creative: false
+
+# Мобы из Mob Tweaks (Inkorthe2nd)
+mobs:
+  # Маленькие гасты (10%): 2.5 хп, стреляют шариками ифрита, дроп 0-1 слеза
+  sad-ghastlings: true
+  # Детёныши: криперы 5% (5 хп, взрыв радиусом 1), пауки 10% (4 хп, без нити),
+  # скелеты/страи/болотники/визер-скелеты 10% (со стрелой или палкой, дроп — костная мука)
+  babies: true
+  # Новые жокеи (малыш-паук, крипер или пещерный паук на пауке, скелет на ифрите, малыш-зомби
+  # на пещерном пауке в пещерах, малыш-утопленник на лососе) + мобы сами садятся на соседей
+  # (скелет на корову, страй на медведя, иллагеры на разорителя...). Питомцев, привязанных
+  # и подписанных биркой не трогают
+  jockeys: true
+  # Пауки и разорители лучше забираются на блоки; ослаблены ифрит, гаст, пещерный паук, страй, кадавр
+  attributes: true
+  # 2.5% при убийстве игроком (больше с добычей): крипер — TNT, паук — паутина, кадавр — песок,
+  # страй — лёд, болотник — лоза, гаст — огненный заряд, фантом — гнилая плоть
+  extra-drops: true
+
+# Вход по паролю (для online-mode=false): окно ещё на загрузке, в мир — только после пароля.
+# Bedrock через Floodgate пароль не вводит — его аккаунт Xbox уже проверен.
+auth:
+  enabled: true
+  # Тот же IP в течение N часов — без пароля (0 — спрашивать всегда)
+  session-hours: 12
+  # Ошибок до кика
+  max-attempts: 3
+  # Столько ошибок с одного IP за 10 минут — IP не пускается 10 минут
+  ip-max-fails: 5
+  min-length: 4
+  # Секунд на ввод
+  timeout-seconds: 60
+  # При online-mode=true лицензию уже проверил Mojang — пароль не спрашивать
+  skip-online-mode: true
+  # Автовход для лицензий: если ник есть у Mojang, сервер проверяет лицензию — без пароля.
+  # Ник, хоть раз вошедший с лицензией, закрепляется: пиратка под ним больше не зайдёт
+  premium:
+    enabled: true
+    # Пиратка с ником, который есть у Mojang (но ещё не закреплён): первая попытка не пройдёт,
+    # вторая в течение 5 минут с того же IP — вход с паролем
+    cracked-fallback: true
+    # Оставить лицензии пиратский UUID — вещи и прогресс не пропадут
+    keep-offline-uuid: true
+
+# Скины для пиратского сервера: ищутся по нику в источниках по порядку (как CustomSkinLoader).
+# Картинки не с Mojang подписываются через MineSkin, чтобы их видели все — и Java, и Bedrock.
+skins:
+  enabled: true
+  sources: [mojang, elyby, tlauncher, littleskin]
+  # Через сколько часов перепроверять скин игрока
+  cache-hours: 6
+  # Сколько ждать MineSkin при входе
+  timeout-seconds: 15
+  # Ключ MineSkin (mineskin.org/apikey) — больше лимит. Без ключа ~10 новых скинов в минуту
+  mineskin-key: ""
+
+# Упоминания: @ник подсвечивается, упомянутому — звук и уведомление как у достижения.
+# В чате: @ + начало ника + Tab. @here — все сразу (право smpcore.mention.all)
+mentions:
+  enabled: true
+  format: "<yellow><bold>@<player>"
+  # Уведомление-ачивка с головой отправителя
+  toast: true
+  # Не чаще раза в N секунд от одного игрока одному игроку
+  cooldown-seconds: 3
+
+# Звуки — меняются в /smp → «Звуки»
+sounds:
+  join:
+    enabled: true
+    sound: "minecraft:block.note_block.bell"
+    volume: 0.6
+    pitch: 1.2
+  quit:
+    enabled: true
+    sound: "minecraft:block.note_block.bass"
+    volume: 0.6
+    pitch: 0.8
+  mention:
+    enabled: true
+    sound: "minecraft:block.note_block.pling"
+    volume: 1.0
+    pitch: 1.6
+
+mining:
+  # Запрет копать глубинносланцевые руды после старта
+  deepslate-lock: true
+  deepslate-lock-minutes: 120
+  # Пока руды закрыты — эти блоки копаются медленнее
+  slow-dig: true
+  slow-dig-factor: 3
+  slow-dig-blocks:
+    - DEEPSLATE
+    - COBBLED_DEEPSLATE
+    - INFESTED_DEEPSLATE
+    - TUFF
+  # Запрет древних обломков и улучшения до незерита после старта
+  netherite-lock: false
+  netherite-lock-minutes: 1440
+
+cooldowns:
+  golden-apple:           { enabled: true,  seconds: 10 }
+  enchanted-golden-apple: { enabled: true,  seconds: 60 }
+  ender-pearl:            { enabled: false, seconds: 3 }
+  wind-charge:            { enabled: false, seconds: 2 }
+  chorus-fruit:           { enabled: false, seconds: 5 }
+  mace:                   { enabled: true,  seconds: 15 }
+  spear-lunge:            { enabled: true,  seconds: 5 }
+  trident-riptide:        { enabled: false, seconds: 5 }
+  elytra-boost:           { enabled: false, seconds: 3 }
+  totem:                  { enabled: false, seconds: 60 }
+
+nerfs:
+  # Fortune на алмазной руде даёт ровно 1 алмаз
+  diamond-fortune: true
+  # Жители не продают алмазные инструменты и броню
+  villager-diamond-gear: true
+  librarian:
+    enabled: true
+    # С какого уровня профессии (1-5) библиотекарь продаёт книги
+    trade-level: 3
+    # Сколько книг добавлять
+    books-count: 6
+    # Цена в изумрудах (1..64)
+    min-price: 32
+    max-price: 64
+    # Вторым ингредиентом нужна обычная книга
+    require-book: true
+    # Сколько раз можно купить каждую книгу до блокировки сделки
+    max-uses: 3
+    # Не выдавать эти зачарования (если only пуст)
+    exclude:
+      - minecraft:binding_curse
+      - minecraft:vanishing_curse
+    # Если не пусто — выдавать только эти
+    only: []
+
+protection:
+  # Отменять телепорты за границу мира (жемчуг, хорус, слезание с сущности, порталы)
+  border-teleport: true
+  # Возвращать игроков, оказавшихся за границей
+  border-return: true
+  # Ловить телепорт транспорта (лодка/лошадь двигается слишком далеко за раз)
+  vehicle-speed: true
+  vehicle-max-blocks: 10
+  # Запрет слезать с сущности сквозь стену
+  dismount-through-walls: true
+  # Жемчуг не может закинуть игрока внутрь блоков
+  pearl-clip: true
+  # Запрет крыши ада
+  nether-roof: false
+  nether-roof-y: 127
+
+minimap:
+  # Отключить кейвмод и радар сущностей (Xaero, VoxelMap, JourneyMap) — для всех, включая операторов
+  restrict: true
+
+nametags:
+  # Скрыть ники над головами
+  hide: true
+  # Ник игрока, на которого смотришь, — в action bar (текст в lang: nametag.looking)
+  look-actionbar: true
+  # Дальность взгляда, блоков (сквозь стены не работает)
+  look-distance: 24
+
+# ---------------------------------------------------------------- чат и таб
+
+chat:
+  # Свой формат чата. Чат всегда глобальный — все видят всех
+  enabled: true
+  format: "<gray><player></gray> <dark_gray>»</dark_gray> <white><message>"
+  # Кнопка [⇄] — перевод сообщения на язык читающего
+  translate: true
+  # Не писать в чат «X зашёл на сервер»
+  hide-join-messages: true
+  # Не писать в чат «X вышел с сервера»
+  hide-quit-messages: true
+
+bubbles:
+  # Сообщения из чата висят над головой игрока (как в FlectonePulse)
+  enabled: true
+  # Сколько секунд висит сообщение (+1 с за каждые 20 символов)
+  seconds: 5
+  # Сколько последних сообщений показывать столбиком
+  max-messages: 3
+  # Длиннее — обрезается с «…»
+  max-length: 100
+  # Ширина строки (в пикселях шрифта), дальше перенос
+  line-width: 150
+  # Высота над головой, блоков
+  height: 0.35
+  # Фон: #AARRGGBB (AA — прозрачность) или #RRGGBB
+  background: "#40000000"
+  # Формат строки, <message> — текст
+  format: "<white><message>"
+  # Видеть свой бабл (с видом от 3-го лица)
+  show-self: false
+  # Не показывать у игроков под зельем невидимости
+  hide-when-invisible: true
+
+# Иконка платформы перед ником в чате и табе: дёрн — Java, бедрок — Bedrock (через Geyser/Floodgate).
+# Java-клиенты видят иконку блока. Bedrock картинки в тексте не умеет — в чате бедрокеру
+# вместо неё значок из *-fallback, в табе иконок у бедрокеров нет
+platform-icons:
+  enabled: true
+  java-sprite: "minecraft:block/grass_block_side"
+  bedrock-sprite: "minecraft:block/bedrock"
+  java-fallback: "<green>■</green>"
+  bedrock-fallback: "<dark_gray>■</dark_gray>"
+
+tab:
+  enabled: true
+  # Шапка и подвал — в lang (у каждого игрока на его языке)
+  update-seconds: 2
+  # Имя в табе. Пусто — не трогать. Плейсхолдеры: <player> <ping>
+  name-format: "<white><player></white> <dark_gray><ping>ms"
+
+motd:
+  enabled: false
+  # Каждый пинг — случайный вариант. Вторая строка после <newline>
+  # Плейсхолдеры: <online> <max> <status>
+  lines:
+    - "<gradient:#7ee8fa:#80ff72><bold>SMP</bold></gradient> <dark_gray>|</dark_gray> <gray>сезон уже идёт<newline><yellow><status>"
+  # Онлайн в списке серверов:
+  #   real — настоящий, fixed — всегда online-value, offset — настоящий + online-value,
+  #   random — случайный 0..online-value, negative — отрицательный (−настоящий − online-value)
+  online-mode: real
+  online-value: 0
+  # Слоты: real | fixed (max-value) | online-plus-one
+  max-mode: real
+  max-value: 100
+  # Список при наведении на онлайн:
+  #   real — настоящие ники, fake — ники из hover-lines, text — строки из hover-lines, hidden — пусто
+  hover-mode: real
+  hover-lines:
+    - "Notch"
+    - "jeb_"
+    - "Herobrine"
+  # Показывать ??? вместо онлайна
+  hide-count: false
+  # Текст вместо онлайна (сервер выглядит «другой версии», зайти можно). Пусто — выключено
+  version-text: ""
+  # Случайная иконка из plugins/SmpCore/icons/*.png (64x64)
+  random-icon: false
+
+vanish:
+  # Админы с smpcore.vanish.see видят друг друга в ванише
+  staff-see: true
+  # В ванише можно летать (ломать, ставить, кидать, подбирать можно всегда)
+  fly: true
+  # В ванише нет урона и голода
+  god: true
+  # Сообщения в чат не уходят (кроме начатых с !)
+  block-chat: true
+  # Фейковые «вышел/зашёл» при включении/выключении ваниша
+  fake-messages: true
+  # Отдельный инвентарь в ванише: свои вещи, броня, опыт, эффекты, хп и сытость
+  # убираются при входе в ваниш и возвращаются при выходе
+  separate-inventory: true
+
+babel:
+  # Ачивка «Вавилонская башня»: двое рядом говорят в Simple Voice Chat
+  # один за другим, а языки их клиентов разные
+  enabled: true
+  radius: 10
+  window-seconds: 5
+  # Не выдавать в лобби и первые N минут после старта SMP
+  after-start-minutes: 30
+
+alerts:
+  # Алерт админам (smpcore.alerts): много алмазов/обломков за короткое время
+  enabled: true
+  window-minutes: 10
+  diamond-threshold: 12
+  debris-threshold: 6
+
+punish:
+  # Писать всем в чат о банах. Муты и кики видит только тот, кто выдал
+  broadcast: true
+  # Мут глушит и Simple Voice Chat (если плагин voicechat стоит)
+  voice-mute: true
+  # Команды, которые нельзя писать в муте
+  muted-commands: [msg, tell, w, whisper, m, r, reply, me, say, teammsg, tm, mail]
+
+invisibility:
+  # Зелье невидимости прячет игрока
+  enabled: true
+  hide-in-tab: true
+  hide-in-death-messages: true
+  hide-in-chat: false
+  # Прятать, только если на игроке нет брони
+  require-no-armor: false
+  # Админы (smpcore.seehidden) всё равно видят в табе
+  staff-see-hidden: false

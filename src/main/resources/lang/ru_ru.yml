@@ -1,0 +1,319 @@
+# ============================================================
+#  SmpCore — русский язык
+#  Формат: MiniMessage (https://docs.advntr.dev/minimessage/format)
+#  Язык выбирается по языку клиента игрока. Свой язык: скопируй
+#  файл, назови по коду клиента (uk_ua.yml, de_de.yml) и переведи.
+# ============================================================
+
+prefix: "<gradient:#7ee8fa:#80ff72><bold>SMP</bold></gradient> <dark_gray>»</dark_gray> <gray>"
+
+time:
+  d: "д"
+  h: "ч"
+  m: "м"
+  s: "с"
+
+command:
+  reloaded: "Конфиг и языки перезагружены."
+  unknown-time: "<red>Не понял время: <white><input>"
+  already-running: "<red>SMP уже идёт. Сначала <white>/smp reset</white>."
+  menu-only-in-game: "Меню доступно только в игре. Команды: <white><commands>"
+  subcommands: "Подкоманды: <white><commands>"
+  start-usage: "<white>/smp start now</white> | <white>18:30</white> | <white>06.10 18:30</white> | <white>30m</white>"
+  reset-done: "SMP сброшен в обычный режим."
+  translate-usage: "<red>Нажми на <white>[⇄]</white> рядом с сообщением в чате."
+
+skin:
+  usage: "<white>/smp skin [ник]</white> или <white>/smp skin all</white> — заново скачать и применить скин"
+  not-online: "<red>Игрок <white><player></white> не в сети."
+  started: "Обновляю скины: <white><count></white> (из них Bedrock: <white><bedrock></white>)..."
+  done: "Скины обновлены: <green><ok></green>, не найдено: <red><failed></red>."
+
+prompt:
+  hint: "<dark_gray>Напиши ответ в чат или <white>отмена</white>."
+  cancel-words: "отмена cancel"
+  cancelled: "Отменено."
+  start-time: "Когда стартуем? Например <white>18:30</white>, <white>06.10 20:00</white> или <white>45m</white>."
+  motd-line: 'Напиши MOTD. Вторая строка — после <white>\<newline></white>. Цвета — MiniMessage.'
+  version-text: "Напиши текст вместо онлайна в списке серверов. <white>-</white> — убрать."
+  hover-line: "Напиши строку (ник или текст) для подсказки при наведении на онлайн."
+  reason: "Напиши причину в чат. <white>-</white> — без причины."
+
+admin:
+  center-moved: "Центр границы и спавн перенесены."
+  need-main-world: "<red>Встань в основном мире."
+  border-applied: "Граница применена."
+  minimap-sent: "Настройки миникарт отправлены."
+  teleported-to-you: "<white><player></white> телепортирован к тебе."
+  healed: "<white><player></white> вылечен."
+  kicked: "<red>Тебя кикнул администратор"
+  saved: "Сохранено."
+
+start:
+  lobby-ready: "Лобби готово. Ждём старта SMP!"
+  scheduled: "Старт SMP: <white><time></white> <dark_gray>(через <left>)"
+  cancelled: "Таймер старта отменён."
+  started: "<gold>SMP начался!</gold> Граница расширяется до <white><size></white> блоков."
+  title: "<gradient:#ffd700:#ff6a00><bold>SMP НАЧАЛСЯ</bold></gradient>"
+  subtitle: "<gray>граница расширяется — удачи!"
+  bossbar: "<green>Граница расширяется</green> <dark_gray>·</dark_gray> <white><size></white><gray> / <final>"
+  spread: "<aqua>Все на позициях!</aqua> Не двигайся — старт через <white><left></white>."
+
+border:
+  growth: "<aqua>Граница мира растёт до <white><size></white> блоков!</aqua> <dark_gray>(за <left>)"
+
+info:
+  idle: "SMP в обычном режиме."
+  lobby-time: "Старт SMP: <white><time></white> (через <left>)"
+  lobby-wait: "Ждём старта SMP, время ещё не объявлено."
+  running: "SMP идёт уже <white><left></white>."
+  deepslate: "Глубинные руды: <status>"
+  netherite: "Незерит: <status>"
+  dimensions: "Ад: <nether><gray>, энд: <end>"
+  open: "<green>открыт"
+  closed: "<red>закрыт"
+  opens-in: "<gold>через <left>"
+  next-growth: "Граница вырастет через <white><left></white>."
+
+status:
+  disabled: "<red>выключен"
+  waiting: "<gray>ждёт старта SMP"
+  with-start: "<yellow>начнётся со стартом"
+  left: "<gold>ещё <left>"
+  open: "<green>открыто"
+
+dimension:
+  nether-opened: "<red><bold>Ад открыт!</bold></red> <gray>Порталы работают — удачи."
+  nether-closed: "<red>Ад</red> закрыт."
+  end-opened: "<light_purple><bold>Энд открыт!</bold></light_purple> <gray>Дракон ждёт."
+  end-closed: "<light_purple>Энд</light_purple> закрыт."
+  nether-soon: "<red>Ад</red> откроется через <white><left></white>."
+  end-soon: "<light_purple>Энд</light_purple> откроется через <white><left></white>."
+  nether-locked-bar: "<red>Ад откроется через <white><left>"
+  end-locked-bar: "<red>Энд откроется через <white><left>"
+  nether-disabled-bar: "<red>Ад сейчас закрыт"
+  end-disabled-bar: "<red>Энд сейчас закрыт"
+  portals-after-start: "<red>Порталы откроются после старта SMP"
+  ignite-blocked: "<red>Портал в ад сейчас не зажечь"
+  evacuated: "Это измерение закрыто, ты перемещён в обычный мир."
+
+mining:
+  deepslate-locked-bar: "<red>Глубинные руды откроются через <white><left>"
+  deepslate-opened: "<aqua>Глубинносланцевые руды открыты!</aqua> Копай."
+  slow-dig-bar: "<gray>Глубинные блоки копаются в <white><factor>×</white> медленнее <dark_gray>· <left>"
+  netherite-locked-bar: "<red>Древние обломки откроются через <white><left>"
+  netherite-smithing-bar: "<red>Незерит откроется через <white><left>"
+  netherite-opened: "<dark_red><bold>Незерит открыт!</bold></dark_red> <gray>Древние обломки можно добывать."
+
+lobby:
+  no-build: "<red>Строить можно после старта SMP"
+
+cooldown:
+  active: "<red><item></red> <gray>— кд <white><left>с"
+  names:
+    golden-apple: "Золотое яблоко"
+    enchanted-golden-apple: "Зачарованное яблоко"
+    ender-pearl: "Эндер-жемчуг"
+    wind-charge: "Заряд ветра"
+    chorus-fruit: "Плод хоруса"
+    mace: "Булава"
+    spear-lunge: "Выпад копьём"
+    trident-riptide: "Тягун"
+    elytra-boost: "Фейерверк в полёте"
+    totem: "Тотем бессмертия"
+
+protection:
+  border-return: "<red>За границу мира нельзя"
+  teleport-cancelled: "<red>Телепорт за границу мира отменён"
+  roof-closed: "<red>Крыша ада закрыта"
+  pearl-blocked: "<red>Жемчуг попал в блок — телепорт отменён"
+  portal-outside: "<red>Портал ведёт за границу мира"
+
+nametag:
+  # Ник того, на кого смотришь (action bar)
+  looking: "<white><player>"
+
+chat:
+  translate-button: " <dark_gray>[⇄]</dark_gray>"
+  translate-hover: "<gray>Перевести на русский"
+  translated: "<dark_gray>[<from> → <to>]</dark_gray> <white><text>"
+  translate-failed: "<red>Не удалось перевести сообщение."
+  translate-expired: "<red>Сообщение слишком старое для перевода."
+  translate-same: "<gray>Сообщение уже на твоём языке."
+
+invisibility:
+  # Чем заменить ник невидимого игрока в сообщениях о смерти и в чате
+  hidden-name: "<gray><obfuscated>?????</obfuscated></gray>"
+
+tab:
+  header:
+    - ""
+    - "<gradient:#7ee8fa:#80ff72><bold>SMP</bold></gradient>"
+    - "<status>"
+    - ""
+  footer:
+    - ""
+    - "<gray>Онлайн: <white><online></white>/<white><max></white>  <dark_gray>|</dark_gray>  <gray>Пинг: <white><ping></white>мс  <dark_gray>|</dark_gray>  <gray>TPS: <white><tps>"
+    - "<dark_gray><time>"
+  status-idle: "<gray>добро пожаловать"
+  status-lobby: "<yellow>до старта <white><left>"
+  status-lobby-wait: "<yellow>ждём старта"
+  status-running: "<green>сезон идёт <white><left>"
+
+punish:
+  usage-timed: "<white>/<cmd> <ник> [время] [причина]</white> <gray>— время: <white>30m</white>, <white>2h</white>, <white>7d</white>, пусто или <white>perm</white> — навсегда"
+  usage-simple: "<white>/<cmd> <ник>"
+  not-found: "<red>Игрок <white><player></white> не найден (ещё не заходил на сервер?)."
+  exempt: "<red>Этого игрока нельзя наказать."
+  forever: "навсегда"
+  no-reason: "без причины"
+  ban-screen: "<red><bold>Ты забанен</bold></red><newline><newline><gray>Причина: <white><reason><newline><gray>Срок: <white><left><newline><gray>Выдал: <white><by>"
+  kick-screen: "<yellow><bold>Тебя кикнули</bold></yellow><newline><newline><gray>Причина: <white><reason><newline><gray>Кикнул: <white><by>"
+  muted: "<red>Ты в муте</red> <gray>(<white><left></white>). Причина: <white><reason>"
+  muted-voice: "<red>Ты в муте — голосовой чат тоже отключён"
+  you-muted: "<red>Тебя замутил <white><by></white> на <white><left></white>.</red> <gray>Причина: <white><reason>"
+  you-unmuted: "<green>С тебя сняли мут."
+  broadcast-ban: "<red><player></red> <gray>забанен (<white><left></white>) — <white><by></white>: <white><reason>"
+  broadcast-mute: "<gold><player></gold> <gray>в муте (<white><left></white>) — <white><by></white>: <white><reason>"
+  broadcast-kick: "<yellow><player></yellow> <gray>кикнут — <white><by></white>: <white><reason>"
+  unbanned: "<green><player></green> <gray>разбанен (<white><by></white>)."
+  unmuted: "<green><player></green> <gray>размучен (<white><by></white>)."
+  not-banned: "<red><player> не в бане."
+  not-muted: "<red><player> не в муте."
+  history-header: "История наказаний <white><player></white>:"
+  history-empty: "<gray>Наказаний не было."
+  history-line: "<dark_gray>•</dark_gray> <gray><entry>"
+
+vanish:
+  on: "<aqua>Ваниш включён.</aqua> <gray>Тебя не видно в мире, табе и списке серверов."
+  off: "<gray>Ваниш выключен — тебя снова видно."
+  still: "<aqua>Ты всё ещё в ванише.</aqua> <gray>/vanish — выйти."
+  bar: "<aqua><bold>ВАНИШ</bold></aqua> <dark_gray>· <gray>тебя не видно"
+  chat-blocked: "<gray>Ты в ванише — сообщение не отправлено. Начни с <white>!</white>, чтобы всё же написать."
+  usage: "<white>/vanish <ник>"
+  no-permission: "<red>Нет права ванишить других."
+  other-on: "<white><player></white> теперь в ванише."
+  other-off: "<white><player></white> вышел из ваниша."
+
+invsee:
+  usage: "<white>/invsee <ник></white> <gray>или <white>/invsee <ник> ender"
+  only-players: "<red>Только из игры."
+  self: "<red>Свой инвентарь открывай на E :)"
+  target-left: "<red>Игрок вышел — окно закрыто."
+
+alerts:
+  ore: "<red>⚠</red> <white><player></white> <gray>добыл <white><count></white> <ore> за <white><window></white> <dark_gray>(<x> <y> <z>) <gray>[клик — тп]"
+  ore-diamond: "алмазной руды"
+  ore-debris: "древних обломков"
+
+advancement:
+  # Текст ачивки — на языке клиента каждого игрока
+  babel-title: "Вавилонская башня"
+  babel-description: "Поговорите в голосовом чате с игроком, у которого другой язык"
+
+day:
+  word: "ДЕНЬ"
+  color: "<#c9c9a8>"
+  milestone-color: "<yellow><bold>"
+  # <text> — печатается по букве
+  title: "<gradient:#ffe08a:#ff9d3d><bold><text>"
+  text: "День <day>"
+  subtitle: ""
+  milestone: "<light_purple>Юбилейный день!"
+
+dimension-name:
+  overworld: "Верхний мир"
+  nether: "Ад"
+  end: "Энд"
+
+compass:
+  death: "<gray>Последняя смерть: <white><x> <y> <z></white> · <world>"
+  no-death: "<gray>Ты ещё не умирал"
+
+soul:
+  admin-none: "<red>В радиусе 64 блоков душ нет."
+  admin-shattered: "<gray>Душа <white><player></white> рассыпается."
+  admin-time: "<gray>Душе <white><player></white> осталось <white><time></white>."
+  admin-usage: "<gray>Использование: <white>/shatter</white> — рассыпать, <white>/shatter 5m</white> — задать время."
+  actionbar: "<aqua>Твоя душа</aqua> <dark_gray>—</dark_gray> <gray>осталось <white><time>"
+  actionbar-other: "<aqua>Душа <player></aqua> <dark_gray>—</dark_gray> <gray>осталось <white><time></white> <dark_gray>· забрать может только владелец"
+  # Подпись над душой. Обычный текст без тегов: {0} — ник, {1} — сколько осталось
+  label: "Душа {0}\n{1}"
+  not-yours: "<gray>Это душа <white><player></white> — забрать её может только владелец"
+
+totem:
+  float-start: "<light_purple>Режим парения включён"
+  float: "<gray>Удерживай <white><key:key.sneak></white>, чтобы спускаться <dark_gray>· <white><seconds> с"
+  void: "<light_purple>Тотем вытащил тебя из бездны! Лети к суше — дальше медленное падение."
+
+join:
+  first: "<gold>✦ <white><player></white> впервые на сервере! Игрок <yellow>№<number>"
+
+mention:
+  actionbar: "<yellow><player></yellow> <gray>упомянул(а) тебя в чате"
+  # Уведомление-ачивка. Обычный текст без тегов: {0} — ник
+  toast: "{0} упомянул(а) тебя"
+  description: "Упоминание в чате"
+
+auth:
+  register-title: "Регистрация"
+  register-text: "Придумай пароль для ника <white><player></white>. Его спросят при входе с нового IP."
+  login-title: "Вход"
+  login-text: "С возвращением, <white><player></white>! Введи пароль."
+  visible-warning: "<gray>Пароль виден при вводе — не показывай экран на стриме."
+  password: "Пароль"
+  repeat: "Повтори пароль"
+  old: "Старый пароль"
+  new: "Новый пароль"
+  register-button: "Зарегистрироваться"
+  login-button: "Войти"
+  leave-button: "Выйти"
+  change-title: "Смена пароля"
+  change-button: "Сменить"
+  cancel-button: "Отмена"
+  too-short: "<red>Пароль слишком короткий — минимум <min> символа"
+  mismatch: "<red>Пароли не совпадают"
+  wrong: "<red>Неверный пароль. Осталось попыток: <left>"
+  kick-wrong: "<red>Неверный пароль"
+  kick-timeout: "<red>Время на ввод пароля вышло"
+  kick-left: "<gray>Вход отменён"
+  kick-ip: "<red>Слишком много неверных паролей с твоего IP.<newline><gray>Попробуй через 10 минут."
+  registered: "<green>Пароль сохранён — не забудь его! Сменить: <white>/changepassword"
+  changed: "<green>Пароль изменён."
+  change-wrong: "<red>Старый пароль неверный."
+  no-account: "<red>У тебя нет пароля — вход через Bedrock."
+  reset-usage: "<gray>Использование: <white>/resetpassword (ник)"
+  reset-done: "<green>Пароль <white><player></white> сброшен — при входе он зарегистрируется заново."
+  reset-none: "<red>У <white><player></white> нет пароля."
+
+teleport:
+  spawn: "<gray>Телепорт на спавн."
+  nether: "<gray>Телепорт на спавн в аду."
+  spawn-other: "<gray><white><player></white> отправлен на спавн."
+  nether-other: "<gray><white><player></white> отправлен на спавн в аду."
+  no-nether: "<red>Ада на сервере нет."
+
+back:
+  none: "<red>Некуда возвращаться."
+  done: "<gray>Возвращение на прошлое место."
+
+pose:
+  cannot: "<red>Сейчас нельзя — встань на землю"
+  stand-hint: "<gray>Нажми <white><key:key.sneak></white>, чтобы встать"
+  head-carrier: "<white><player></white> <gray>сидит у тебя на голове <dark_gray>·</dark_gray> <white>/sit players</white> <gray>— запретить"
+  head-denied: "<white><player></white> <gray>не разрешает садиться себе на голову"
+  head-disabled: "<gray>Теперь на тебя нельзя садиться. Вернуть — <white>/sit players"
+  head-enabled: "<gray>Теперь на тебя можно садиться (ПКМ пустой рукой)"
+
+reload:
+  no-plugman: "<red>Для /plugins reload нужен плагин PlugManX в папке plugins."
+
+lockdown:
+  kick: "<gold><bold>Технические работы</bold></gold><newline><newline><gray>Сервер скоро вернётся — заходи чуть позже!"
+  on: "<gold>⚠ Сервер ушёл на техработы</gold> <gray>— зайти могут только операторы."
+  off: "<green>Техработы закончены</green> <gray>— сервер снова открыт для всех."
+  already-on: "<gray>Техработы уже идут. Выключить — <white>/lockdown off"
+  already-off: "<gray>Техработ сейчас нет. Включить — <white>/lockdown on"
+
+treechop:
+  axe-weak: "<red>Топору не хватит прочности на всё дерево"

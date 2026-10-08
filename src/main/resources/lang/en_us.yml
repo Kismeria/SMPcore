@@ -1,0 +1,312 @@
+# ============================================================
+#  SmpCore — English
+#  Format: MiniMessage (https://docs.advntr.dev/minimessage/format)
+#  Picked by the player's client language.
+# ============================================================
+
+prefix: "<gradient:#7ee8fa:#80ff72><bold>SMP</bold></gradient> <dark_gray>»</dark_gray> <gray>"
+
+time:
+  d: "d"
+  h: "h"
+  m: "m"
+  s: "s"
+
+command:
+  reloaded: "Config and languages reloaded."
+  unknown-time: "<red>Can't read the time: <white><input>"
+  already-running: "<red>SMP is already running. Use <white>/smp reset</white> first."
+  menu-only-in-game: "The menu works in game only. Commands: <white><commands>"
+  subcommands: "Subcommands: <white><commands>"
+  start-usage: "<white>/smp start now</white> | <white>18:30</white> | <white>06.10 18:30</white> | <white>30m</white>"
+  reset-done: "SMP reset to normal mode."
+  translate-usage: "<red>Click <white>[⇄]</white> next to a chat message."
+
+skin:
+  usage: "<white>/smp skin [name]</white> or <white>/smp skin all</white> — download and apply the skin again"
+  not-online: "<red>Player <white><player></white> is not online."
+  started: "Refreshing skins: <white><count></white> (Bedrock: <white><bedrock></white>)..."
+  done: "Skins refreshed: <green><ok></green>, not found: <red><failed></red>."
+
+prompt:
+  hint: "<dark_gray>Type your answer in chat or <white>cancel</white>."
+  cancel-words: "cancel отмена"
+  cancelled: "Cancelled."
+  start-time: "When do we start? For example <white>18:30</white>, <white>06.10 20:00</white> or <white>45m</white>."
+  motd-line: 'Type the MOTD. Second line goes after <white>\<newline></white>. Colors are MiniMessage.'
+  version-text: "Type the text shown instead of the player count. <white>-</white> removes it."
+  hover-line: "Type a line (a name or text) for the player count hover."
+  reason: "Type the reason in chat. <white>-</white> — no reason."
+
+admin:
+  center-moved: "Border center and world spawn moved."
+  need-main-world: "<red>Stand in the main world."
+  border-applied: "Border applied."
+  minimap-sent: "Minimap settings sent."
+  teleported-to-you: "<white><player></white> was teleported to you."
+  healed: "<white><player></white> was healed."
+  kicked: "<red>You were kicked by an admin"
+  saved: "Saved."
+
+start:
+  lobby-ready: "Lobby is ready. Waiting for the SMP start!"
+  scheduled: "SMP starts: <white><time></white> <dark_gray>(in <left>)"
+  cancelled: "Start timer cancelled."
+  started: "<gold>SMP has started!</gold> The border grows to <white><size></white> blocks."
+  title: "<gradient:#ffd700:#ff6a00><bold>SMP STARTED</bold></gradient>"
+  subtitle: "<gray>the border is growing — good luck!"
+  bossbar: "<green>Border is growing</green> <dark_gray>·</dark_gray> <white><size></white><gray> / <final>"
+  spread: "<aqua>Everyone in position!</aqua> Don't move — start in <white><left></white>."
+
+border:
+  growth: "<aqua>The world border grows to <white><size></white> blocks!</aqua> <dark_gray>(over <left>)"
+
+info:
+  idle: "SMP is in normal mode."
+  lobby-time: "SMP starts: <white><time></white> (in <left>)"
+  lobby-wait: "Waiting for the SMP start, time not announced yet."
+  running: "SMP has been running for <white><left></white>."
+  deepslate: "Deepslate ores: <status>"
+  netherite: "Netherite: <status>"
+  dimensions: "Nether: <nether><gray>, End: <end>"
+  open: "<green>open"
+  closed: "<red>closed"
+  opens-in: "<gold>in <left>"
+  next-growth: "The border grows again in <white><left></white>."
+
+status:
+  disabled: "<red>disabled"
+  waiting: "<gray>waits for the SMP start"
+  with-start: "<yellow>starts with the SMP"
+  left: "<gold><left> left"
+  open: "<green>open"
+
+dimension:
+  nether-opened: "<red><bold>The Nether is open!</bold></red> <gray>Portals work now — good luck."
+  nether-closed: "<red>The Nether</red> is closed."
+  end-opened: "<light_purple><bold>The End is open!</bold></light_purple> <gray>The dragon is waiting."
+  end-closed: "<light_purple>The End</light_purple> is closed."
+  nether-soon: "<red>The Nether</red> opens in <white><left></white>."
+  end-soon: "<light_purple>The End</light_purple> opens in <white><left></white>."
+  nether-locked-bar: "<red>The Nether opens in <white><left>"
+  end-locked-bar: "<red>The End opens in <white><left>"
+  nether-disabled-bar: "<red>The Nether is closed"
+  end-disabled-bar: "<red>The End is closed"
+  portals-after-start: "<red>Portals open after the SMP start"
+  ignite-blocked: "<red>You can't light a Nether portal now"
+  evacuated: "This dimension is closed, you were moved to the overworld."
+
+mining:
+  deepslate-locked-bar: "<red>Deepslate ores open in <white><left>"
+  deepslate-opened: "<aqua>Deepslate ores are open!</aqua> Go mine."
+  slow-dig-bar: "<gray>Deep blocks break <white><factor>×</white> slower <dark_gray>· <left>"
+  netherite-locked-bar: "<red>Ancient debris opens in <white><left>"
+  netherite-smithing-bar: "<red>Netherite opens in <white><left>"
+  netherite-opened: "<dark_red><bold>Netherite is open!</bold></dark_red> <gray>Ancient debris can be mined."
+
+lobby:
+  no-build: "<red>Building opens after the SMP start"
+
+cooldown:
+  active: "<red><item></red> <gray>— cooldown <white><left>s"
+  names:
+    golden-apple: "Golden Apple"
+    enchanted-golden-apple: "Enchanted Golden Apple"
+    ender-pearl: "Ender Pearl"
+    wind-charge: "Wind Charge"
+    chorus-fruit: "Chorus Fruit"
+    mace: "Mace"
+    spear-lunge: "Spear Lunge"
+    trident-riptide: "Riptide"
+    elytra-boost: "Elytra Firework"
+    totem: "Totem of Undying"
+
+protection:
+  border-return: "<red>You can't go past the world border"
+  teleport-cancelled: "<red>Teleport past the world border cancelled"
+  roof-closed: "<red>The Nether roof is closed"
+  pearl-blocked: "<red>The pearl hit a block — teleport cancelled"
+  portal-outside: "<red>This portal leads past the world border"
+
+nametag:
+  looking: "<white><player>"
+
+chat:
+  translate-button: " <dark_gray>[⇄]</dark_gray>"
+  translate-hover: "<gray>Translate to English"
+  translated: "<dark_gray>[<from> → <to>]</dark_gray> <white><text>"
+  translate-failed: "<red>Couldn't translate the message."
+  translate-expired: "<red>This message is too old to translate."
+  translate-same: "<gray>The message is already in your language."
+
+invisibility:
+  hidden-name: "<gray><obfuscated>?????</obfuscated></gray>"
+
+tab:
+  header:
+    - ""
+    - "<gradient:#7ee8fa:#80ff72><bold>SMP</bold></gradient>"
+    - "<status>"
+    - ""
+  footer:
+    - ""
+    - "<gray>Online: <white><online></white>/<white><max></white>  <dark_gray>|</dark_gray>  <gray>Ping: <white><ping></white>ms  <dark_gray>|</dark_gray>  <gray>TPS: <white><tps>"
+    - "<dark_gray><time>"
+  status-idle: "<gray>welcome"
+  status-lobby: "<yellow>start in <white><left>"
+  status-lobby-wait: "<yellow>waiting for the start"
+  status-running: "<green>season running <white><left>"
+
+punish:
+  usage-timed: "<white>/<cmd> <name> [time] [reason]</white> <gray>— time: <white>30m</white>, <white>2h</white>, <white>7d</white>, empty or <white>perm</white> — forever"
+  usage-simple: "<white>/<cmd> <name>"
+  not-found: "<red>Player <white><player></white> not found (never joined?)."
+  exempt: "<red>This player can't be punished."
+  forever: "forever"
+  no-reason: "no reason"
+  ban-screen: "<red><bold>You are banned</bold></red><newline><newline><gray>Reason: <white><reason><newline><gray>Duration: <white><left><newline><gray>By: <white><by>"
+  kick-screen: "<yellow><bold>You were kicked</bold></yellow><newline><newline><gray>Reason: <white><reason><newline><gray>By: <white><by>"
+  muted: "<red>You are muted</red> <gray>(<white><left></white>). Reason: <white><reason>"
+  muted-voice: "<red>You are muted — voice chat is muted too"
+  you-muted: "<red><white><by></white> muted you for <white><left></white>.</red> <gray>Reason: <white><reason>"
+  you-unmuted: "<green>You were unmuted."
+  broadcast-ban: "<red><player></red> <gray>was banned (<white><left></white>) — <white><by></white>: <white><reason>"
+  broadcast-mute: "<gold><player></gold> <gray>was muted (<white><left></white>) — <white><by></white>: <white><reason>"
+  broadcast-kick: "<yellow><player></yellow> <gray>was kicked — <white><by></white>: <white><reason>"
+  unbanned: "<green><player></green> <gray>was unbanned (<white><by></white>)."
+  unmuted: "<green><player></green> <gray>was unmuted (<white><by></white>)."
+  not-banned: "<red><player> is not banned."
+  not-muted: "<red><player> is not muted."
+  history-header: "Punishment history of <white><player></white>:"
+  history-empty: "<gray>No punishments."
+  history-line: "<dark_gray>•</dark_gray> <gray><entry>"
+
+vanish:
+  on: "<aqua>Vanish on.</aqua> <gray>You're hidden in the world, tab list and server list."
+  off: "<gray>Vanish off — you're visible again."
+  still: "<aqua>You're still vanished.</aqua> <gray>/vanish — leave."
+  bar: "<aqua><bold>VANISHED</bold></aqua> <dark_gray>· <gray>nobody sees you"
+  chat-blocked: "<gray>You're vanished — message not sent. Start it with <white>!</white> to send anyway."
+  usage: "<white>/vanish <name>"
+  no-permission: "<red>You can't vanish other players."
+  other-on: "<white><player></white> is now vanished."
+  other-off: "<white><player></white> left vanish."
+
+invsee:
+  usage: "<white>/invsee <name></white> <gray>or <white>/invsee <name> ender"
+  only-players: "<red>In game only."
+  self: "<red>Open your own inventory with E :)"
+  target-left: "<red>The player left — window closed."
+
+alerts:
+  ore: "<red>⚠</red> <white><player></white> <gray>mined <white><count></white> <ore> in <white><window></white> <dark_gray>(<x> <y> <z>) <gray>[click — tp]"
+  ore-diamond: "diamond ore"
+  ore-debris: "ancient debris"
+
+advancement:
+  babel-title: "Tower of Babel"
+  babel-description: "Talk in voice chat with a player who uses another language"
+
+day:
+  word: "DAY"
+  color: "<#c9c9a8>"
+  milestone-color: "<yellow><bold>"
+  title: "<gradient:#ffe08a:#ff9d3d><bold><text>"
+  text: "Day <day>"
+  subtitle: ""
+  milestone: "<light_purple>Milestone day!"
+
+dimension-name:
+  overworld: "Overworld"
+  nether: "Nether"
+  end: "End"
+
+compass:
+  death: "<gray>Last death: <white><x> <y> <z></white> · <world>"
+  no-death: "<gray>You haven't died yet"
+
+soul:
+  admin-none: "<red>No souls within 64 blocks."
+  admin-shattered: "<gray><white><player></white>'s soul is shattering."
+  admin-time: "<gray><white><player></white>'s soul now has <white><time></white> left."
+  admin-usage: "<gray>Usage: <white>/shatter</white> — shatter, <white>/shatter 5m</white> — set time."
+  actionbar: "<aqua>Your soul</aqua> <dark_gray>—</dark_gray> <gray>time left <white><time>"
+  actionbar-other: "<aqua><player>'s soul</aqua> <dark_gray>—</dark_gray> <gray>time left <white><time></white> <dark_gray>· only the owner can collect it"
+  label: "{0}'s soul\n{1}"
+  not-yours: "<gray>This is <white><player></white>'s soul — only the owner can collect it"
+
+totem:
+  float-start: "<light_purple>Free float mode activated"
+  float: "<gray>Hold <white><key:key.sneak></white> to hover down <dark_gray>· <white><seconds>s"
+  void: "<light_purple>The totem pulled you out of the void! Fly to land — slow falling next."
+
+join:
+  first: "<gold>✦ <white><player></white> joined for the first time! Player <yellow>#<number>"
+
+mention:
+  actionbar: "<yellow><player></yellow> <gray>mentioned you in chat"
+  toast: "{0} mentioned you"
+  description: "Chat mention"
+
+auth:
+  register-title: "Register"
+  register-text: "Choose a password for <white><player></white>. You'll be asked for it when joining from a new IP."
+  login-title: "Log in"
+  login-text: "Welcome back, <white><player></white>! Enter your password."
+  visible-warning: "<gray>The password is visible while typing — don't show your screen on stream."
+  password: "Password"
+  repeat: "Repeat password"
+  old: "Old password"
+  new: "New password"
+  register-button: "Register"
+  login-button: "Log in"
+  leave-button: "Leave"
+  change-title: "Change password"
+  change-button: "Change"
+  cancel-button: "Cancel"
+  too-short: "<red>Password is too short — at least <min> characters"
+  mismatch: "<red>Passwords don't match"
+  wrong: "<red>Wrong password. Attempts left: <left>"
+  kick-wrong: "<red>Wrong password"
+  kick-timeout: "<red>Time to enter the password is up"
+  kick-left: "<gray>Login cancelled"
+  kick-ip: "<red>Too many wrong passwords from your IP.<newline><gray>Try again in 10 minutes."
+  registered: "<green>Password saved — don't forget it! Change it: <white>/changepassword"
+  changed: "<green>Password changed."
+  change-wrong: "<red>Old password is wrong."
+  no-account: "<red>You have no password — you join through Bedrock."
+  reset-usage: "<gray>Usage: <white>/resetpassword (name)"
+  reset-done: "<green><white><player></white>'s password was reset — they'll register again on join."
+  reset-none: "<red><white><player></white> has no password."
+
+teleport:
+  spawn: "<gray>Teleported to spawn."
+  nether: "<gray>Teleported to the Nether spawn."
+  spawn-other: "<gray>Sent <white><player></white> to spawn."
+  nether-other: "<gray>Sent <white><player></white> to the Nether spawn."
+  no-nether: "<red>There is no Nether on this server."
+
+back:
+  none: "<red>Nowhere to go back to."
+  done: "<gray>Back to your previous location."
+
+pose:
+  cannot: "<red>You can't do that right now — stand on the ground"
+  stand-hint: "<gray>Press <white><key:key.sneak></white> to stand up"
+  head-carrier: "<white><player></white> <gray>is sitting on your head <dark_gray>·</dark_gray> <white>/sit players</white> <gray>to forbid"
+  head-denied: "<white><player></white> <gray>doesn't allow sitting on their head"
+  head-disabled: "<gray>Nobody can sit on you now. Undo with <white>/sit players"
+  head-enabled: "<gray>Players can sit on you again (right-click with an empty hand)"
+
+reload:
+  no-plugman: "<red>/plugins reload needs the PlugManX plugin in the plugins folder."
+
+lockdown:
+  kick: "<gold><bold>Maintenance</bold></gold><newline><newline><gray>The server will be back soon — try again a bit later!"
+  on: "<gold>⚠ The server is under maintenance</gold> <gray>— only operators can join."
+  off: "<green>Maintenance is over</green> <gray>— the server is open again."
+  already-on: "<gray>Maintenance is already on. Turn off: <white>/lockdown off"
+  already-off: "<gray>No maintenance right now. Turn on: <white>/lockdown on"
+
+treechop:
+  axe-weak: "<red>Your axe won't last for the whole tree"
