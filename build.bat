@@ -52,6 +52,7 @@ if defined SINGLE (
 set "OUT=%ROOT%"
 set "FAILS=0"
 set "BUILT=0"
+set "CORE_JAR="
 
 call :find_java
 
@@ -173,6 +174,8 @@ set "GW="
 if exist "%P%\gradlew.bat" if exist "%P%\gradle\wrapper\gradle-wrapper.jar" set "GW=%P%\gradlew.bat"
 if not defined GW for /d %%D in ("%ROOT%\*") do if exist "%%~fD\gradlew.bat" if exist "%%~fD\gradle\wrapper\gradle-wrapper.jar" set "GW=%%~fD\gradlew.bat"
 
+if /i not "%NAME%"=="SmpCore" call :link_core "%P%"
+
 if defined GW (
     call "%GW%" -p "%P%" clean build
 ) else (
@@ -197,6 +200,7 @@ set "N=%~n1"
 if /i "%N:~-8%"=="-sources" exit /b 0
 if /i "%N:~-8%"=="-javadoc" exit /b 0
 if /i "%N:~-6%"=="-plain" exit /b 0
+if /i "%NAME%"=="SmpCore" set "CORE_JAR=%~f1"
 copy /y "%~f1" "%OUT%\" >nul
 echo [OK] %~nx1 -^> %OUT%
 set /a BUILT+=1
@@ -209,6 +213,16 @@ for /f "delims=-" %%A in ("%N%") do set "BASE=%%A"
 del /q "%SERVER_PLUGINS%\%BASE%-*.jar" 2>nul
 copy /y "%~f1" "%SERVER_PLUGINS%\" >nul
 echo [OK] %~nx1 -^> %SERVER_PLUGINS%
+exit /b 0
+
+
+rem Плагин зависит от SmpCore и в build.gradle.kts указан jar конкретной версии, которого уже нет
+rem (clean удалил старый) — кладём по этому пути только что собранный SmpCore. Существующие файлы не трогаем.
+:link_core
+if not defined CORE_JAR exit /b 0
+if not exist "%~1\build.gradle.kts" exit /b 0
+set "LP=%~1"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$p=$env:LP; $j=$env:CORE_JAR; $txt=Get-Content -Raw -Encoding UTF8 (Join-Path $p 'build.gradle.kts'); foreach ($m in [regex]::Matches($txt, '\x22([^\x22]*SmpCore[^\x22]*\.jar)\x22')) { $t=$m.Groups[1].Value; if ($t -match '[\*\$]') { continue }; if (-not [IO.Path]::IsPathRooted($t)) { $t=Join-Path $p $t }; $t=[IO.Path]::GetFullPath($t); if (Test-Path -LiteralPath $t) { continue }; New-Item -ItemType Directory -Force -Path (Split-Path $t) | Out-Null; Copy-Item -Force -LiteralPath $j -Destination $t; Write-Host ('[i] SmpCore jar -> ' + $t) }"
 exit /b 0
 
 
