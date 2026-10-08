@@ -1,0 +1,5 @@
+# Windows-скрипты храним как есть (CRLF), shell-скрипт — LF
+*.bat -text
+gradlew -text
+*.jar binary
+*.png binary
